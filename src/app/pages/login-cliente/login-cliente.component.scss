@@ -1,0 +1,25 @@
+.login-container {
+  width: 300px;
+  margin: 100px auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+    .full-width {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .error {
+    color: red;
+    margin-top: 1rem;
+  }
+}
+
+mat-form-field {
+  width: 100%;
+}

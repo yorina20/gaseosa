@@ -1,0 +1,48 @@
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.action-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+}
+
+.search-field {
+  width: 280px;
+
+  .mat-form-field-flex {
+    background-color: white; /* fondo blanco */
+    border-radius: 50px;      /* borde redondeado */
+    padding: 0 0.5rem;
+  }
+
+  .mat-form-field-outline-start,
+  .mat-form-field-outline-end,
+  .mat-form-field-outline-gap {
+    border-width: 1px !important;     /* borde más delgado */
+    border-color: #ccc !important;    /* color gris claro */
+    border-radius: 25px !important;   /* borde redondeado */
+  }
+
+  input.mat-input-element {
+    border-radius: 25px;
+    padding: 0.4rem 1rem;
+    font-size: 14px;
+  }
+
+  button.mat-icon-button {
+    margin-right: 0.3rem;
+  }
+}
+
+.btn-agregar {
+  white-space: nowrap;
+  height: 40px;
+  border-radius: 20px;
+}

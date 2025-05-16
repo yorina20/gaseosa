@@ -1,0 +1,81 @@
+/* Header centrado */
+.header-proveedor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background-color: #c15d06;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  h1 {
+    
+    font-size: 24px;
+  }
+}
+
+/* Contenedor principal con padding para el header */
+.contenedor {
+  height: 100vh;
+  padding-top: 70px;
+}
+
+/* Sidebar con espacio entre elementos */
+.sidenav {
+  width: 220px;
+  background-color: #c15d06;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    
+
+    .menu-link {
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-size: 16px;
+      margin-top: 100px; /* baja el link */
+    }
+
+    .spacer {
+      flex: 10;
+      
+    }
+
+    .menu-button {
+      align-self: flex-start;
+     margin-top: 500px; 
+    }
+  }
+}
+
+/* Contenido principal */
+.contenido {
+  padding: 24px;
+}
+
+.tarjeta-bienvenida {
+  background: #e3f2fd;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+
+  h3 {
+    margin: 0 0 8px;
+  }
+
+  p {
+    margin: 0;
+  }
+}

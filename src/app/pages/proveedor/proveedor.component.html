@@ -1,0 +1,32 @@
+<!-- Header centrado -->
+<header class="header-proveedor">
+  <div class="header-center">
+    <h1>Bienvenido Proveedor</h1>
+  </div>
+</header>
+
+<!-- Contenedor principal -->
+<mat-sidenav-container class="contenedor">
+  <!-- Sidebar -->
+  <mat-sidenav mode="side" opened class="sidenav">
+    <div class="menu">
+      <!-- Enlace para ir a clientes (ya sin decir "Agregar") -->
+      <a class="menu-link" routerLink="/proveedor">
+        <mat-icon>group</mat-icon>
+        <span>Clientes</span>
+      </a>
+
+      <!-- Botón salir abajo -->
+      <div class="spacer"></div>
+      <button mat-raised-button color="warn" class="menu-button" routerLink="/">
+        <mat-icon>logout</mat-icon>
+        Salir
+      </button>
+    </div>
+  </mat-sidenav>
+
+  <!-- Contenido principal -->
+  <mat-sidenav-content>
+    <app-table-proveedor></app-table-proveedor>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,18 @@
+
+<div class="header">
+  <img
+    src="https://media-public.canva.com/yd8AA/MAGF7yyd8AA/1/t.png"
+    alt="Logo"
+    class="logo" />
+
+  <h1>{{ titulo }}</h1>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item [routerLink]="'/login-proveedor'">Proveedor</button>
+    <button mat-menu-item [routerLink]="'/login-cliente'">Cliente</button>
+  </mat-menu>
+</div>
