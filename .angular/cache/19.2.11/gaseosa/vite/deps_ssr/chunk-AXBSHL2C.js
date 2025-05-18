@@ -1,3 +1,5 @@
+import { createRequire } from 'module';const require = createRequire(import.meta.url);
+
 // node_modules/@angular/cdk/fesm2022/boolean-property-DaaVhX5A.mjs
 function coerceBooleanProperty(value) {
   return value != null && `${value}` !== "false";
@@ -12,7 +14,7 @@ function coerceCssPixelValue(value) {
 }
 
 export {
-  coerceCssPixelValue,
-  coerceBooleanProperty
+  coerceBooleanProperty,
+  coerceCssPixelValue
 };
-//# sourceMappingURL=chunk-PCQEEKRW.js.map
+//# sourceMappingURL=chunk-AXBSHL2C.js.map

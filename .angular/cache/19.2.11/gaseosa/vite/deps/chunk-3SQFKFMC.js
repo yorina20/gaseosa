@@ -1,6 +1,6 @@
 import {
   HighContrastModeDetector
-} from "./chunk-45UN3ADX.js";
+} from "./chunk-HVXYRLEK.js";
 import {
   BidiModule
 } from "./chunk-SEY5UIJC.js";
@@ -47,4 +47,4 @@ var MatCommonModule = class _MatCommonModule {
 export {
   MatCommonModule
 };
-//# sourceMappingURL=chunk-CJ3MM3JT.js.map
+//# sourceMappingURL=chunk-3SQFKFMC.js.map
