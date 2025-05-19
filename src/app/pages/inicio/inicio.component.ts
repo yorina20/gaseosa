@@ -5,13 +5,13 @@ import { FooterComponent } from '../shared/footer/footer.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import { LoginProveedorComponent } from '../login-proveedor/login-proveedor.component';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-inicio',
   standalone: true,
   imports: [
-    CommonModule,LoginProveedorComponent,
+    CommonModule,
     HeaderComponent,
     FooterComponent,
     MatButtonModule,

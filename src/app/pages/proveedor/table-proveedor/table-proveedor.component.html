@@ -1,11 +1,14 @@
 <div class="action-bar">
+  <div class="action-bar">
   <mat-form-field appearance="outline" class="search-field">
     <mat-label>Buscar</mat-label>
-    <input matInput />
+    <input matInput (input)="aplicarFiltro($event)" />
     <button mat-icon-button matSuffix>
       <mat-icon>search</mat-icon>
     </button>
   </mat-form-field>
+</div>
+
 
   <button mat-raised-button color="primary" (click)="agregarCliente()">
     <mat-icon>person_add</mat-icon> Agregar

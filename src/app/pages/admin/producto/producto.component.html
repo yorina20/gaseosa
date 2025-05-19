@@ -1,0 +1,71 @@
+<div class="productos-header">
+  <mat-form-field appearance="outline" floatLabel="auto" class="search-field">
+    <mat-label>Buscar</mat-label>
+    <input matInput placeholder="Buscar producto" (input)="aplicarFiltro($event)" />
+    <button mat-icon-button matSuffix>
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <button mat-raised-button color="warn">Agregar</button>
+</div>
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z2">
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+    <mat-cell *matCellDef="let element"> <strong>{{element.id}}</strong> </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="imagen">
+    <mat-header-cell *matHeaderCellDef> Imagen </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <img [src]="element.imagen" alt="producto" width="50" height="50" />
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="nombre">
+    <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.nombre}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="descripcion">
+    <mat-header-cell *matHeaderCellDef> Descripción </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.descripcion}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="stock">
+    <mat-header-cell *matHeaderCellDef> Stock </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.stock}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="precio">
+    <mat-header-cell *matHeaderCellDef> Precio </mat-header-cell>
+    <mat-cell *matCellDef="let element"> ${{element.precio}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="marca">
+    <mat-header-cell *matHeaderCellDef> Marca </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.marca}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="tipo_botella">
+    <mat-header-cell *matHeaderCellDef> Tipo Botella </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.tipo_botella}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="tipo_bebida">
+    <mat-header-cell *matHeaderCellDef> Tipo Bebida </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.tipo_bebida}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <button mat-icon-button color="accent"><mat-icon>edit</mat-icon></button>
+      <button mat-icon-button color="warn"><mat-icon>delete</mat-icon></button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

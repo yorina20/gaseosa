@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  padding: 2rem; 
+}
+
+.clientes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  .search-field {
+    flex: 1 1 300px;
+    max-width: 300px;
+
+  }
+
+}
+
+mat-table {
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  overflow-x: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}

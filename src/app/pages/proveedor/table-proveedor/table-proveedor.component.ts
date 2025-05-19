@@ -54,7 +54,7 @@ export class TableProveedorComponent implements AfterViewInit {
 
   constructor(
     private _liveAnnouncer: LiveAnnouncer,
-    private dialog: MatDialog  // <-- Inyecta MatDialog aquí
+    private dialog: MatDialog
   ) {}
 
   ngAfterViewInit() {
@@ -73,20 +73,46 @@ export class TableProveedorComponent implements AfterViewInit {
     const filtro = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filtro.trim().toLowerCase();
   }
+agregarCliente() {
+  const dialogRef = this.dialog.open(AgregarClienteComponent, {
+    width: '400px',
+    data: { titulo: 'Agregar Cliente' }
+  });
 
-  agregarCliente() {
-    this.dialog.open(AgregarClienteComponent, {
-      width: '400px'
-    });
-  }
+  dialogRef.afterClosed().subscribe((nuevoCliente: Omit<Cliente, 'id'>) => {
+    if (nuevoCliente) {
+      const nuevoId = this.dataSource.data.length
+        ? Math.max(...this.dataSource.data.map(c => c.id)) + 1
+        : 1;
 
-  editarCliente(cliente: Cliente) {
-    console.log('Editar cliente:', cliente);
-    // Aquí puedes navegar a un formulario o abrir un diálogo
-  }
+      const clienteConId: Cliente = { id: nuevoId, ...nuevoCliente };
+      this.dataSource.data = [...this.dataSource.data, clienteConId];
+    }
+  });
+}
 
-  eliminarCliente(cliente: Cliente) {
-    console.log('Eliminar cliente:', cliente);
-    // Aquí puedes mostrar confirmación y luego eliminar
+editarCliente(cliente: Cliente) {
+  const dialogRef = this.dialog.open(AgregarClienteComponent, {
+    width: '400px',
+    data: { cliente: cliente, titulo: 'Editar Cliente' }
+  });
+
+  dialogRef.afterClosed().subscribe((clienteEditado: Cliente) => {
+    if (clienteEditado) {
+      const dataActualizada = this.dataSource.data.map(c => {
+        if (c.id === cliente.id) {
+          return { ...c, ...clienteEditado };
+        }
+        return c;
+      });
+      this.dataSource.data = dataActualizada;
+    }
+  });
+}
+
+eliminarCliente(cliente: Cliente) {
+  if (confirm(`¿Estás seguro de eliminar al cliente ${cliente.nombre} ${cliente.apellido}?`)) {
+    this.dataSource.data = this.dataSource.data.filter(c => c.id !== cliente.id);
   }
+}
 }

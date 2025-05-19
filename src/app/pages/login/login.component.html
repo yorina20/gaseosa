@@ -1,0 +1,24 @@
+<mat-card class="login-card">
+  <div class="header">
+    <h2>Inicio de sesión</h2>
+    <button mat-icon-button (click)="cerrar()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Usuario</mat-label>
+      <input matInput formControlName="usuario" placeholder="Tu usuario" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Contraseña</mat-label>
+      <input matInput type="password" formControlName="contrasena" placeholder="Tu contraseña" />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">
+      Iniciar Sesión
+    </button>
+  </form>
+</mat-card>

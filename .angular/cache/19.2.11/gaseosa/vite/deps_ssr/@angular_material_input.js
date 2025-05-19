@@ -1,5 +1,9 @@
 import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
+  ErrorStateMatcher,
+  _ErrorStateTracker
+} from "./chunk-5ZQDZBKW.js";
+import {
   FormGroupDirective,
   NgControl,
   NgForm,
@@ -19,23 +23,23 @@ import {
   MatLabel,
   MatPrefix,
   MatSuffix
-} from "./chunk-SWNC2J27.js";
+} from "./chunk-XDWGKSJB.js";
+import {
+  coerceBooleanProperty
+} from "./chunk-AXBSHL2C.js";
 import {
   getSupportedInputTypes
 } from "./chunk-WU7V3K4Y.js";
 import "./chunk-BABSEUN5.js";
-import {
-  coerceBooleanProperty
-} from "./chunk-OT7QKXYB.js";
 import "./chunk-JME5XKN5.js";
 import {
   MatCommonModule
-} from "./chunk-4UDG6PZU.js";
+} from "./chunk-GFZ2V33D.js";
 import {
   _IdGenerator
-} from "./chunk-ZBZBOYA7.js";
-import "./chunk-MQTTQ4L4.js";
+} from "./chunk-55LBGNUJ.js";
 import "./chunk-7ACVPLRB.js";
+import "./chunk-MQTTQ4L4.js";
 import {
   Platform
 } from "./chunk-TKW3IB2F.js";
@@ -43,7 +47,6 @@ import "./chunk-7HSHXKCI.js";
 import {
   Directive,
   ElementRef,
-  Injectable,
   InjectionToken,
   Input,
   NgModule,
@@ -61,7 +64,6 @@ import {
   ɵɵattribute,
   ɵɵclassProp,
   ɵɵdefineDirective,
-  ɵɵdefineInjectable,
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵhostProperty,
@@ -76,78 +78,6 @@ var import_rxjs = __toESM(require_cjs(), 1);
 
 // node_modules/@angular/material/fesm2022/input-value-accessor-D1GvPuqO.mjs
 var MAT_INPUT_VALUE_ACCESSOR = new InjectionToken("MAT_INPUT_VALUE_ACCESSOR");
-
-// node_modules/@angular/material/fesm2022/error-options-Dm2JJUbF.mjs
-var ShowOnDirtyErrorStateMatcher = class _ShowOnDirtyErrorStateMatcher {
-  isErrorState(control, form) {
-    return !!(control && control.invalid && (control.dirty || form && form.submitted));
-  }
-  static ɵfac = function ShowOnDirtyErrorStateMatcher_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _ShowOnDirtyErrorStateMatcher)();
-  };
-  static ɵprov = ɵɵdefineInjectable({
-    token: _ShowOnDirtyErrorStateMatcher,
-    factory: _ShowOnDirtyErrorStateMatcher.ɵfac
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ShowOnDirtyErrorStateMatcher, [{
-    type: Injectable
-  }], null, null);
-})();
-var ErrorStateMatcher = class _ErrorStateMatcher {
-  isErrorState(control, form) {
-    return !!(control && control.invalid && (control.touched || form && form.submitted));
-  }
-  static ɵfac = function ErrorStateMatcher_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _ErrorStateMatcher)();
-  };
-  static ɵprov = ɵɵdefineInjectable({
-    token: _ErrorStateMatcher,
-    factory: _ErrorStateMatcher.ɵfac,
-    providedIn: "root"
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ErrorStateMatcher, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], null, null);
-})();
-
-// node_modules/@angular/material/fesm2022/error-state-Dtb1IHM-.mjs
-var _ErrorStateTracker = class {
-  _defaultMatcher;
-  ngControl;
-  _parentFormGroup;
-  _parentForm;
-  _stateChanges;
-  /** Whether the tracker is currently in an error state. */
-  errorState = false;
-  /** User-defined matcher for the error state. */
-  matcher;
-  constructor(_defaultMatcher, ngControl, _parentFormGroup, _parentForm, _stateChanges) {
-    this._defaultMatcher = _defaultMatcher;
-    this.ngControl = ngControl;
-    this._parentFormGroup = _parentFormGroup;
-    this._parentForm = _parentForm;
-    this._stateChanges = _stateChanges;
-  }
-  /** Updates the error state based on the provided error state matcher. */
-  updateErrorState() {
-    const oldState = this.errorState;
-    const parent = this._parentFormGroup || this._parentForm;
-    const matcher = this.matcher || this._defaultMatcher;
-    const control = this.ngControl ? this.ngControl.control : null;
-    const newState = matcher?.isErrorState(control, parent) ?? false;
-    if (newState !== oldState) {
-      this.errorState = newState;
-      this._stateChanges.next();
-    }
-  }
-};
 
 // node_modules/@angular/material/fesm2022/input.mjs
 var import_operators = __toESM(require_operators(), 1);

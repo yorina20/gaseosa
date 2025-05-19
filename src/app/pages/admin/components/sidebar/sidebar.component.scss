@@ -1,0 +1,42 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem;
+
+  .menu-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.8rem;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+
+    &:hover,
+    &.active {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    mat-icon {
+      font-size: 24px;
+    }
+  }
+
+  .spacer {
+    flex-grow: 1;
+  }
+
+  button {
+    width: 100%;
+    justify-content: flex-start;
+    font-weight: bold;
+    color: white;
+
+    mat-icon {
+      margin-right: 0.5rem;
+    }
+  }
+}
