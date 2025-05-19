@@ -1,0 +1,35 @@
+span{
+    color: black;
+    flex: 1 1 auto;
+}
+.drawer-container{
+    width: 100%;
+    height: calc(100vh - 64px);
+}
+.drawer-sidenav{
+    padding: 20px;
+    background:white;
+}
+
+mat-toolbar{
+    display: flex;
+    gap:1rem;
+}
+mat-icon{
+    color: #005cbb;
+}
+mat-nav-list{
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+mat-drawer{
+    background-color: rgb(243,238,238);
+    width: 270px;
+    border-radius: 0;
+}
+.container {
+    padding: 16px;
+    
+}
