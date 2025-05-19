@@ -7,7 +7,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { A11yModule } from '@angular/cdk/a11y';
+
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -40,7 +40,7 @@ const ELEMENT_DATA: Cliente[] = [
     MatInputModule,
     MatSortModule,
     MatButtonModule, MatDialogModule, 
-    A11yModule,
+    
     AgregarClienteComponent
   ],
   standalone: true
