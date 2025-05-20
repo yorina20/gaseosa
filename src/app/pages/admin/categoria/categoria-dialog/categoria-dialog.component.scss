@@ -1,0 +1,30 @@
+::ng-deep .mat-mdc-dialog-container {
+  border-radius: 8px !important; /* menos redondeado */
+  padding: 16px;
+}
+
+h2 {
+  text-align: center;
+  font-weight: bold;
+}
+
+mat-form-field {
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+mat-label, input, mat-select {
+  text-align: center !important;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: center; /* centramos botones */
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+button {
+  min-width: 100px;
+}

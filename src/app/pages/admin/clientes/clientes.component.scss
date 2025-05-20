@@ -5,25 +5,39 @@
 
 .clientes-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
-  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 16px;
 
   .search-field {
-    flex: 1 1 300px;
-    max-width: 300px;
-
+    width: 300px;
   }
-
 }
 
 mat-table {
   width: 100%;
-  background: #fff;
-  border-radius: 12px;
-  padding: 1rem;
-  overflow-x: auto;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+
+mat-header-cell, mat-cell {
+  padding: 8px;
+  text-align: left;
+}
+.entregado {
+  color: green;
+  font-weight: bold;
+}
+.pendiente {
+  color: orange;
+  font-weight: bold;
+}
+.enviado {
+  color: blue;
+  font-weight: bold;
+}
+.cancelado {
+  color: red;
+  font-weight: bold;
+}
+
+
+

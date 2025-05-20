@@ -1,0 +1,30 @@
+
+<h2 mat-dialog-title>Agregar nueva categoría</h2>
+
+<mat-form-field class="w-full">
+  <mat-label>Seleccione una categoría</mat-label>
+  <mat-select [(ngModel)]="opcionSeleccionada">
+    <mat-option value="tipoBebida">Tipo de bebida</mat-option>
+    <mat-option value="tamanioEnvase">Tamaño de envase</mat-option>
+    <mat-option value="marca">Marca</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div *ngIf="opcionSeleccionada === 'tipoBebida' || opcionSeleccionada === 'marca'">
+  <mat-form-field class="w-full">
+    <mat-label>Nombre</mat-label>
+    <input matInput [(ngModel)]="nombre" />
+  </mat-form-field>
+</div>
+
+<div *ngIf="opcionSeleccionada === 'tamanioEnvase'">
+  <mat-form-field class="w-full">
+    <mat-label>Descripción</mat-label>
+    <input matInput [(ngModel)]="descripcion" />
+  </mat-form-field>
+</div>
+
+<div class="dialog-actions">
+  <button mat-stroked-button color="warn" (click)="cancelar()">Cancelar</button>
+  <button mat-flat-button color="primary" (click)="guardar()">Guardar</button>
+</div>

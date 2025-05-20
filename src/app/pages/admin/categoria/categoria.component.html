@@ -1,1 +1,56 @@
-<p>categoria works!</p>,
+<div class="categoria-container-wrapper">
+  <app-categoria-toolbar
+    (buscar)="filtrar($event)"
+    (agregar)="abrirAgregar()"
+  ></app-categoria-toolbar>
+
+
+<div class="categoria-container">
+  <section class="categoria-section">
+    <h2>Tipo de Bebida</h2>
+    <mat-table [dataSource]="dataTipoBebida" class="mat-elevation-z2">
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+        <mat-cell *matCellDef="let item">{{ item.id }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="nombre">
+        <mat-header-cell *matHeaderCellDef>Nombre</mat-header-cell>
+        <mat-cell *matCellDef="let item">{{ item.nombre }}</mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="['id', 'nombre']"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: ['id', 'nombre']"></mat-row>
+    </mat-table>
+  </section>
+
+  <section class="categoria-section">
+    <h2>Tamaño de Envase</h2>
+    <mat-table [dataSource]="dataTamanioEnvase" class="mat-elevation-z2">
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+        <mat-cell *matCellDef="let item">{{ item.id }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="descripcion">
+        <mat-header-cell *matHeaderCellDef>Descripción</mat-header-cell>
+        <mat-cell *matCellDef="let item">{{ item.descripcion }}</mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="['id', 'descripcion']"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: ['id', 'descripcion']"></mat-row>
+    </mat-table>
+  </section>
+
+  <section class="categoria-section">
+    <h2>Marca</h2>
+    <mat-table [dataSource]="dataMarca" class="mat-elevation-z2">
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+        <mat-cell *matCellDef="let item">{{ item.id }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="nombre">
+        <mat-header-cell *matHeaderCellDef>Nombre</mat-header-cell>
+        <mat-cell *matCellDef="let item">{{ item.nombre }}</mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="['id', 'nombre']"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: ['id', 'nombre']"></mat-row>
+    </mat-table>
+  </section>
+</div>

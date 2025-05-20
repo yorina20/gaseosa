@@ -6,48 +6,69 @@
       <mat-icon>search</mat-icon>
     </button>
   </mat-form-field>
-  
-  <button mat-raised-button color="warn">Agregar</button>
 </div>
 
 <mat-table [dataSource]="clientes" class="mat-elevation-z2">
-  <!-- Columnas -->
+
+  <!-- Id -->
   <ng-container matColumnDef="id">
     <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
   </ng-container>
 
+  <!-- Nombre -->
   <ng-container matColumnDef="nombre">
     <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.nombre}} </mat-cell>
   </ng-container>
 
+  <!-- Apellido -->
   <ng-container matColumnDef="apellido">
     <mat-header-cell *matHeaderCellDef> Apellido </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.apellido}} </mat-cell>
   </ng-container>
 
+  <!-- Teléfono -->
   <ng-container matColumnDef="telefono">
     <mat-header-cell *matHeaderCellDef> Teléfono </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.telefono}} </mat-cell>
   </ng-container>
 
+  <!-- Dirección -->
   <ng-container matColumnDef="direccion">
     <mat-header-cell *matHeaderCellDef> Dirección </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.direccion}} </mat-cell>
   </ng-container>
 
+  <!-- DNI -->
   <ng-container matColumnDef="dni">
     <mat-header-cell *matHeaderCellDef> DNI </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.dni}} </mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="acciones">
-    <mat-header-cell *matHeaderCellDef> Pedidos </mat-header-cell>
+  <!-- Total pedidos -->
+  <ng-container matColumnDef="totalPedidos">
+    <mat-header-cell *matHeaderCellDef> Total Pedidos </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.pedidos.length}} </mat-cell>
+  </ng-container>
+
+  <!-- Estado del último pedido -->
+  <ng-container matColumnDef="estadoUltimoPedido">
+    <mat-header-cell *matHeaderCellDef> Estado Último Pedido </mat-header-cell>
     <mat-cell *matCellDef="let element">
-      <button mat-button color="primary">Ver</button>
-      <button mat-icon-button color="accent"><mat-icon>edit</mat-icon></button>
-      <button mat-icon-button color="warn"><mat-icon>delete</mat-icon></button>
+      <span [ngClass]="getEstadoColor(obtenerEstadoUltimoPedido(element.pedidos))">
+        {{ obtenerEstadoUltimoPedido(element.pedidos) }}
+      </span>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Acciones -->
+  <ng-container matColumnDef="acciones">
+    <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <button mat-flat-button color="primary" (click)="verPedidos(element)">
+        <mat-icon>visibility</mat-icon> Ver
+      </button>
     </mat-cell>
   </ng-container>
 

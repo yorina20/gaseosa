@@ -1,0 +1,29 @@
+.toolbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.search-field {
+  flex: 1;
+  max-width: 400px;
+
+  .mat-form-field-flex {
+    border-radius: 25px;
+  }
+
+  .mat-input-element {
+    padding-right: 36px; // espacio para el ícono
+  }
+
+  .mat-icon-button {
+    margin-right: 4px;
+  }
+}
+
+.add-button {
+  white-space: nowrap;
+}

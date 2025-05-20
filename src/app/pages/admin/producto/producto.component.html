@@ -7,62 +7,79 @@
     </button>
   </mat-form-field>
 
-  <button mat-raised-button color="warn">Agregar</button>
+  <button mat-raised-button color="warn" class="btn-agregar">
+    <mat-icon>add</mat-icon>
+    Agregar
+  </button>
 </div>
 
-<mat-table [dataSource]="dataSource" class="mat-elevation-z2">
+<mat-table [dataSource]="dataSource" class="mat-elevation-z2 tabla-productos">
+  <!-- ID -->
   <ng-container matColumnDef="id">
     <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
-    <mat-cell *matCellDef="let element"> <strong>{{element.id}}</strong> </mat-cell>
+    <mat-cell *matCellDef="let element"> <strong>{{ element.id }}</strong> </mat-cell>
   </ng-container>
 
+  <!-- Imagen -->
   <ng-container matColumnDef="imagen">
     <mat-header-cell *matHeaderCellDef> Imagen </mat-header-cell>
     <mat-cell *matCellDef="let element">
-      <img [src]="element.imagen" alt="producto" width="50" height="50" />
+      <img [src]="element.imagen" alt="producto" width="40" height="40" />
     </mat-cell>
   </ng-container>
 
+  <!-- Nombre -->
   <ng-container matColumnDef="nombre">
     <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.nombre}} </mat-cell>
+    <mat-cell *matCellDef="let element"> {{ element.nombre }} </mat-cell>
   </ng-container>
 
+  <!-- Descripción -->
   <ng-container matColumnDef="descripcion">
     <mat-header-cell *matHeaderCellDef> Descripción </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.descripcion}} </mat-cell>
+    <mat-cell *matCellDef="let element"> {{ element.descripcion }} </mat-cell>
   </ng-container>
 
+  <!-- Stock -->
   <ng-container matColumnDef="stock">
     <mat-header-cell *matHeaderCellDef> Stock </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.stock}} </mat-cell>
+    <mat-cell *matCellDef="let element"> {{ element.stock }} </mat-cell>
   </ng-container>
 
+  <!-- Precio -->
   <ng-container matColumnDef="precio">
     <mat-header-cell *matHeaderCellDef> Precio </mat-header-cell>
-    <mat-cell *matCellDef="let element"> ${{element.precio}} </mat-cell>
+    <mat-cell *matCellDef="let element"> ${{ element.precio }} </mat-cell>
   </ng-container>
 
+  <!-- Marca -->
   <ng-container matColumnDef="marca">
     <mat-header-cell *matHeaderCellDef> Marca </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.marca}} </mat-cell>
+    <mat-cell *matCellDef="let element"> {{ element.marca }} </mat-cell>
   </ng-container>
 
+  <!-- Tipo Botella -->
   <ng-container matColumnDef="tipo_botella">
     <mat-header-cell *matHeaderCellDef> Tipo Botella </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.tipo_botella}} </mat-cell>
+    <mat-cell *matCellDef="let element"> {{ element.tipo_botella }} </mat-cell>
   </ng-container>
 
+  <!-- Tipo Bebida -->
   <ng-container matColumnDef="tipo_bebida">
     <mat-header-cell *matHeaderCellDef> Tipo Bebida </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.tipo_bebida}} </mat-cell>
+    <mat-cell *matCellDef="let element"> {{ element.tipo_bebida }} </mat-cell>
   </ng-container>
 
+  <!-- Acciones -->
   <ng-container matColumnDef="acciones">
     <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
     <mat-cell *matCellDef="let element">
-      <button mat-icon-button color="accent"><mat-icon>edit</mat-icon></button>
-      <button mat-icon-button color="warn"><mat-icon>delete</mat-icon></button>
+      <button mat-icon-button color="accent" (click)="editarProducto(element)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="editarProducto(element.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
     </mat-cell>
   </ng-container>
 
